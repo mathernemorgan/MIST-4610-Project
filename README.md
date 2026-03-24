@@ -1,9 +1,9 @@
 # MIST-4610-Project
 
-**Team Name**
+**Team Name:**
 Group B4
 
-**Group Member Names**
+**Group Member Names:**
 Zeynep Koseoglu
 Mark Monzer
 Morgan Matherne
