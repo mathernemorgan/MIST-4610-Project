@@ -1,5 +1,4 @@
 # MIST-4610-Project
-MIST 4610 Project
 
 **Team Name**
 Group B4
