@@ -12,8 +12,8 @@ Zeynep Koseoglu, Mark Monzer, Morgan Matherne, Roshan Gadiraju, Hiya Shah
 **Query #1**
 
 Identify all "All-Ages" Venues in Athens
-            Question: Which venues in Athens allow all-ages attendance, and what are their capacities and addresses?
-            Justification: It lets booking agents pick places suited for younger crowds, matching the audience an artist draws. Venue fit matters when age groups differ. That way, shows land where fans actually go.
+Question: Which venues in Athens allow all-ages attendance, and what are their capacities and addresses?
+Justification: It lets booking agents pick places suited for younger crowds, matching the audience an artist draws. Venue fit matters when age groups differ. That way, shows land where fans actually go.
 
 SELECT venue_name, venue_capacity, venue_address_ln_1, venue_address_ln_2 
 FROM mb_B4.Venue
