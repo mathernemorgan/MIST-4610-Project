@@ -140,3 +140,6 @@ FROM mb_B4.Venue
 JOIN ShowEvent ON Venue.venue_id = ShowEvent.venue_id 
 JOIN ArtistBooking ON ShowEvent.event_id = ArtistBooking.event_id 
 GROUP BY Venue.venue_id;
+
+**Database Information**
+
