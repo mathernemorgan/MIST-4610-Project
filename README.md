@@ -130,8 +130,10 @@ Question: What is the average performance slot position for artists at each venu
 Justification: What you see reflects how busy things get at certain spots. When numbers climb, it often means several acts play one after another there. That kind of setup usually needs extra help around the location. Single-act places tend to run with fewer people on hand.
 
 
-SELECT venue_name, AVG(ArtistBooking.booking_slot_order) AS Avg_Slot_Position 
-FROM mb_B4.Venue
-JOIN ShowEvent ON Venue.venue_id = ShowEvent.Venue_venue_id
-JOIN ArtistBooking ON ShowEvent.event_id = ArtistBooking.event_id
-GROUP BY venue_id;
+SELECT venue_name, 
+AVG(ArtistBooking.booking_slot_order) 
+AS Avg_Slot_Position 
+FROM mb_B4.Venue 
+JOIN ShowEvent ON Venue.venue_id = ShowEvent.venue_id 
+JOIN ArtistBooking ON ShowEvent.event_id = ArtistBooking.event_id 
+GROUP BY Venue.venue_id;
