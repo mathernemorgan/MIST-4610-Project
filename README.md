@@ -13,7 +13,7 @@ LMC is an organization that organizes many music events in Athens. It partners w
 ![LMC Database Model](Group%20B4%20-%20LMC%20Database%20Model.png)
 
 ## Data Dictionary
-[Data Dictionary B4](Data%20Dictionary%20B4.pdf)
+![Data Dictionary B4](Data_Dictionary_B4_long.png)
 
 # Queries
 
