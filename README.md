@@ -18,7 +18,7 @@ The database model represents the operations of the Live Music Circuit (LMC) by 
 The model is extended to include artist structure and digital presence through Band, SocialMedia, and ArtistSocialMediaMetrics. A Band can have many Artists, forming a one-to-many, non-identifying relationship that allows representation of both solo performers and group members. SocialMedia defines platforms, and ArtistSocialMediaMetrics serves as an associative entity between Artist and SocialMedia, creating a many-to-many, identifying relationship (composite key of artist_id and socialmedia_platform). This entity captures metrics such as followers, streams, and engagement, enabling analysis of artist popularity. Overall, the design uses associative entities to resolve many-to-many relationships, distinguishes between identifying and non-identifying relationships based on key dependency, and separates event scheduling from resource allocation to accurately reflect real-world operations while supporting meaningful managerial insights.
 
 ## Data Dictionary
-![Data Dictionary B4](Data_Dictionary_B4_long.png)
+![Data Dictionary](Data_Dictionary_Final_long.png)
 
 # Queries
 
