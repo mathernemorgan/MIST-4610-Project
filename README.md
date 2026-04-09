@@ -123,6 +123,17 @@ Justification: What you see reflects how busy things get at certain spots. When 
 **Database Information**
 Name of Database: mb_B4
 Additional Information: All project queries are bookmarked and saved as stored procedures in MySQL using the required GP_Qx naming format:
+CALL GP_Q1
+CALL GP_Q2
+CALL GP_Q3
+CALL GP_Q4
+CALL GP_Q5
+CALL GP_Q6
+CALL GP_Q7
+CALL GP_Q8
+CALL GP_Q9
+CALL GP_Q10
+
 
 
 
