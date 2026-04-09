@@ -111,4 +111,9 @@ Justification: What you see reflects how busy things get at certain spots. When 
 <img width="1988" height="1504" alt="image" src="https://github.com/user-attachments/assets/c3ccb123-66fa-438e-8332-db03d8ec4696" />
 
 **Database Information**
+Name of Database: mb_B4
+Additional Information: All project queries are bookmarked and saved as stored procedures in MySQL using the required GP_Qx naming format:
+
+
+
 
