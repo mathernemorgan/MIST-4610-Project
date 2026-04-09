@@ -118,12 +118,12 @@ Identify Social Media Engagement vs. Performance
 Question: How does an artist's monthly listener count correlate with their actual number of bookings?
 Justification: It shows which artists are gaining fast on social media, even if they’re not playing many gigs yet. Scouts spot these names before others catch on. Popularity online sometimes means big crowds later. A quiet artist today might sell out tomorrow. Numbers help tell that story early.
 
-SELECT artist_f_name, ArtistSocialMediaMetrics.Total_Monthly_Listeners,
+SELECT artist_f_name, ArtistSocialMediaMetrics.Total_Monthly_Listeners, 
 COUNT(ArtistBooking.booking_show_format) AS Booking_Count 
-FROM mb_B4.Artist
-JOIN ArtistSocialMediaMetrics ON Artist.artist_id = ArtistSocialMediaMetrics.Artist_artist_id
-LEFT JOIN ArtistBooking ON Artist.artist_id = ArtistBooking.Artist_artist_id
-GROUP BY Artist.artist_id, ArtistSocialMediaMetrics.Total_Monthly_Listeners
+FROM mb_B4.Artist 
+JOIN ArtistSocialMediaMetrics ON Artist.artist_id = ArtistSocialMediaMetrics.artist_id 
+LEFT JOIN ArtistBooking ON Artist.artist_id = ArtistBooking.artist_id 
+GROUP BY Artist.artist_id, ArtistSocialMediaMetrics.Total_Monthly_Listeners 
 ORDER BY ArtistSocialMediaMetrics.Total_Monthly_Listeners DESC;
 
 **Query #10**
