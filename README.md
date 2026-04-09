@@ -61,15 +61,14 @@ Calculate Potential Rental Revenue based on Venue Partner Type
 Question: What is the total potential rental revenue for each venue, accounting for different rates for Partners vs. Non-Partners?
 Justification: It shows how each location is doing financially, managers can see whether offering discounts through partners brings enough extra business to make up for lower prices. What matters here is spotting trends across sites where deals might be helping - or hurting - overall results. When one spot gives more breaks but sells way more tickets, that pattern could signal success. Yet another place might cut prices just a bit yet stay flat, raising questions about what drives growth. Seeing these differences clearly helps leaders adjust without guessing.
 
-SELECT venue_name,
-SUM(CASE WHEN Venue.venue_partner_type = 'Partner' THEN ResourceType.type_partner_rate 
-ELSE ResourceType.type_non_partner_rate 
-END) AS Total_Billing
-FROM Venue
-JOIN ShowEvent ON Venue.venue_id = ShowEvent.Venue_venue_id
-JOIN ResourceAllocation ON Show_Event.event_id = ResourceAllocation.Show_Event_event_id
-JOIN ResourceItem ON ResourceAllocation.ResourceItem_item_invent_num = ResourceItem.item_invent_num
-JOIN ResourceType ON ResourceItem.ResourceType_type_id = ResourceType.type_id
+SELECT venue_name, 
+SUM(CASE WHEN Venue.venue_partner_type = 'Partner' THEN ResourceType.type_partner_rate ELSE ResourceType.type_non_partner_rate END) 
+AS Total_Billing 
+FROM Venue 
+JOIN ShowEvent ON Venue.venue_id = ShowEvent.venue_id 
+JOIN ResourceAllocation ON ShowEvent.event_id = ResourceAllocation.event_id 
+JOIN ResourceItem ON ResourceAllocation.item_invent_num = ResourceItem.item_invent_num 
+JOIN ResourceType ON ResourceItem.Resource_type_id = ResourceType.type_id 
 GROUP BY venue_name;
 
 **Query #6**
@@ -78,10 +77,11 @@ Identify "Power Artists" (Booked for more than 2 shows)
 Question: Which artists have been booked for more than two shows across the circuit?
 Justification: Who pulls big crowds and delivers steady income? These top performers often get first pick on dates or deals covering several shows. Some find their calendar fills fast - consistency pays off.
 
-SELECT artist_f_name, artist_l_name, COUNT(ArtistBooking.booking_show_format) AS Total_Bookings
-FROM mb_B4.Artist
-JOIN ArtistBooking ON Artist.artist_id = ArtistBooking.Artist_artist_id
-GROUP BY Artist.artist_id
+SELECT artist_f_name, artist_l_name, 
+COUNT(ArtistBooking.booking_show_format) AS Total_Bookings 
+FROM mb_B4.Artist 
+JOIN ArtistBooking ON Artist.artist_id = ArtistBooking.artist_id 
+GROUP BY Artist.artist_id 
 HAVING COUNT(ArtistBooking.booking_show_format) > 2;
 
 **Query #7**
@@ -90,14 +90,11 @@ Find Resource Types that have NEVER been used
 Question: Which resource types have never been used in a show allocation?
 Justification: Dead stock shows up clearly, managers might choose to sell off old gear. Or they could group it with popular items so event spaces are more likely to book them. Seeing what sits too long helps shape those choices.
 
-SELECT type_name
-FROM mb_B4.ResourceType
-WHERE NOT EXISTS (
-    SELECT 1 
-    FROM ResourceItem 
-    JOIN ResourceAllocation ON ResourceItem.item_invent_num = ResourceAllocation.ResourceItem_item_invent_num
-    WHERE ResourceItem.ResourceType_type_id = ResourceType.type_id
-);
+SELECT type_name 
+FROM mb_B4.ResourceType 
+WHERE NOT EXISTS ( SELECT 1 FROM ResourceItem 
+JOIN ResourceAllocation ON ResourceItem.item_invent_num = ResourceAllocation.item_invent_num 
+WHERE ResourceItem.resource_type_id = ResourceType.type_id );
 
 **Query #8**
 
@@ -105,13 +102,12 @@ Staff Workload: Primary vs. Backup Roles
 Question: What is the total distribution of Primary and Backup coordinator roles across all staff members?
 Justification: Balancing tasks matters so one person does not end up carrying too much weight. Team flow stays smoother when responsibility shifts around naturally. Work spreads out better if no individual gets stuck leading every time. Even pressure helps keep energy steady across roles. Shared effort means fewer breakdowns during busy periods.
 
-SELECT staff_f_name, staff_l_name, 'Primary' AS Role
-FROM mb_B4.Staff
-JOIN ShowEvent ON Staff.staff_id = ShowEvent.Staff_staff_id
-UNION
-SELECT staff_f_name, staff_l_name, 'Backup' AS Role
+SELECT staff_f_name, staff_l_name, 'Primary' AS Role 
+FROM mb_B4.Staff 
+JOIN ShowEvent ON Staff.staff_id = ShowEvent.main_staff_id 
+UNION SELECT staff_f_name, staff_l_name,'Backup' AS Role 
 FROM Staff 
-JOIN ShowEvent ON Staff.staff_id = ShowEvent.Staff_staff_id1;
+JOIN ShowEvent ON Staff.staff_id = ShowEvent.backup_staff_id;
 
 **Query #9:**
 
