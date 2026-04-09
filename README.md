@@ -19,8 +19,8 @@ LMC is an organization that organizes many music events in Athens. It partners w
 
 **Query #1**
 
-Identify all "All-Ages" Venues in Athens
-Question: Which venues in Athens allow all-ages attendance, and what are their capacities and addresses?
+Identify all "All-Ages" Venues in Athens//
+Question: Which venues in Athens allow all-ages attendance, and what are their capacities and addresses?//
 Justification: It lets booking agents pick places suited for younger crowds, matching the audience an artist draws. Venue fit matters when age groups differ. That way, shows land where fans actually go.
 
 <img width="1896" height="986" alt="image" src="https://github.com/user-attachments/assets/13221753-9ac5-4d1b-94fa-d3d64e73b26c" />
