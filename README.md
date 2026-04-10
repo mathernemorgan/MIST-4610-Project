@@ -82,13 +82,12 @@ Justification: Who pulls big crowds and delivers steady income? These top perfor
 
 **Query #7**
 
-Find Resource Types that have NEVER been used
-Question: Which resource types have never been used in a show allocation?
+High-Usage Equipment Audit
+Question: Which specific resource items have been allocated to more than three different show events, and what is their current condition rating?
 
-Justification: Dead stock shows up clearly, managers might choose to sell off old gear. Or they could group it with popular items so event spaces are more likely to book them. Seeing what sits too long helps shape those choices.
+Justification: Heavy-use gear shows up clearly here. When something gets called on often but isn’t in top shape, trouble looms mid-show. Spotting these pieces helps teams plan upkeep ahead of time. Rotation becomes easier too - spreading use so some units aren’t worn down while others gather dust. One piece working hard while rest wait? That pattern breaks with this view.
 
-<img width="1988" height="1508" alt="image" src="https://github.com/user-attachments/assets/339827b7-3aab-43be-9a43-51257390578c" />
-
+<img width="992" height="661" alt="Screenshot 2026-04-10 at 4 16 45 PM" src="https://github.com/user-attachments/assets/74c4b1f1-cfa5-4387-889b-c001948f47ec" />
 
 **Query #8**
 
